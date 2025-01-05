@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News List</title>
+    <style>
+        /* 뉴스 항목을 5개씩 가로로 나열할 수 있도록 설정 */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 1줄에 5개의 컬럼 */
+            gap: 10px; /* 항목 간 간격 */
+        }
+        .news-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            background-color: #53863d;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+<h1>News List</h1>
+
+<div class="news-container">
+    <!-- 모델에서 받아온 뉴스 항목을 5개씩 표시 -->
+    <th:block th:each="news : ${newsList}">
+        <div class="news-item">
+            <h3 th:text="${news.title}">Title</h3>
+            <p th:text="${news.category}">Category</p>
+            <p th:text="${news.content}">Content</p>
+            <img th:src="@{/uploads/{filePath}(filePath=${news.filePath})}" alt="뉴스 이미지">
+        </div>
+    </th:block>
+</div>
+
+<a href="/news/create">Create New News</a>
+<a href="/news/open">open api News</a>
+</body>
+</html>
