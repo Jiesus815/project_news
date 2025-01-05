@@ -16,7 +16,8 @@
 <br/>
 #  요구 사항 명세서
 
-<img src="https://github.com/user-attachments/assets/6d321a70-70cd-4b63-bf14-b6a1705c1ff4.png">
+![over png](https://github.com/user-attachments/assets/6305093a-11ed-4f25-9b70-5def0bfbf802)
+
 
 
 
